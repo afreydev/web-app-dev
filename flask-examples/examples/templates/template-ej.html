@@ -1,0 +1,13 @@
+<html>
+	<h1>Peliculas</h1>
+	<ul>
+	{% for pelicula in peliculas %}
+		<li>{{ pelicula }}</li>
+	{% endfor %}
+	</ul>
+	{% if bandera %}
+	<p><strong>Nombre:</strong>{{ nombre }}</p>
+	{% else %}
+		<p>Sin nombre</p>
+	{% endif %}
+</html>

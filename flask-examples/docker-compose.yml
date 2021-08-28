@@ -1,0 +1,19 @@
+version: "3.3"
+services:
+    flask:
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        image: flask-examples:latest
+        working_dir: /opt/examples/
+        command: bash run.sh
+        ports:
+            - 5000:5000
+        volumes:
+            - ./examples/:/opt/examples/
+        environment:
+            FLASK_APP: hello.py
+        stdin_open: true
+        tty: true
+        expose:
+            - 5000

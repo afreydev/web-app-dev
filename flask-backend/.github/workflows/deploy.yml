@@ -1,0 +1,33 @@
+name: Deploy companies backend
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Publish to Dockerhub
+      uses: elgohr/Publish-Docker-Github-Action@master
+      env:
+        USER_ID: ${{ secrets.COMPANIES_USER }}
+      with:
+        name: repo/companies-backend:1
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+
+    - name: Deploy backend
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.KEY }}
+        port: ${{ secrets.PORT }}
+        script: | 
+          cd /opt/companies-backend
+          ./bin/deploy
