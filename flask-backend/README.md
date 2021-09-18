@@ -1,12 +1,17 @@
 # Starting this App
 
 ```bash
+# In a vagrant en you should create a folder in another path
+mkdir /home/vagrant/mysql
+cd /vagrant/data
+ln -s /home/vagrant/mysql .
 # Start the Flask app (Open localhost:5000/companies/)
+cd /vagrant
 docker-compose up -d
 # Populate the DB
 docker-compose run --rm -v ${PWD}:/opt/src -w /opt/src mysql bash
 # In the container shell. The password is password D:
-mysql -ucompanies -hmysql -p
+mysql -ucompanies -hmysql -p  # write exit
 mysql -ucompanies -hmysql -p companies < ./db/creation.sql
 ```
 
