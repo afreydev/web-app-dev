@@ -41,7 +41,7 @@ def update_company(name, description, company_id):
     con = db.get_connection()
     cursor = con.cursor()
     try:
-        sql="UPDATE companies set name='{0}', description='{1}' WHERE id = {3}".format(name, description, company_id)
+        sql="UPDATE companies set name='{0}', description='{1}' WHERE id = {2}".format(name, description, company_id)
         cursor.execute(sql)
         con.commit()
         return {"message":"OK"}
