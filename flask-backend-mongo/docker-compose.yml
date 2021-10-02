@@ -29,4 +29,14 @@ services:
             - ./.env
         volumes:
             - ./data/mongo:/data/db
-    
+    node:
+        image: node:latest
+        volumes:
+            - ./movies:/opt/movies
+        working_dir: /opt/movies
+    nginx:
+        image: nginx:latest
+        volumes:
+            - ./movies/build:/usr/share/nginx/html
+        ports:
+            - 8080:80
