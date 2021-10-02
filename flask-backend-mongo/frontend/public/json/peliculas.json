@@ -1,0 +1,85 @@
+[
+  {
+    "id": "1",
+    "titulo": "The Suicide Squad",
+    "calificacion": 7.5,
+    "imagen": "http://localhost:3000/img/the-suicide-squad.jpg"
+  },
+  {
+    "id": "2",
+    "titulo": "Black Widow",
+    "calificacion": 6.8,
+    "imagen": "http://localhost:3000/img/black-widow.jpg"
+  },
+  {
+    "id": "3",
+    "titulo": "Venom: Let There Be Carnage",
+    "imagen": "http://localhost:3000/img/venom.jpg"
+  },
+  {
+    "id": "4",
+    "titulo": "Once Upon a Time... in Hollywood",
+    "calificacion": 7.6,
+    "imagen": "http://localhost:3000/img/once-upon-a-time-in-hollywood.jpg"
+  },
+  {
+    "id": "5",
+    "titulo": "Cruella",
+    "calificacion": 7.4,
+    "imagen": "http://localhost:3000/img/cruella.jpg"
+  },
+  {
+    "id": "6",
+    "titulo": "Spider-Man: No Way Home",
+    "calificacion": 7.4,
+    "imagen": "http://localhost:3000/img/spider-man.jpg"
+  },
+  {
+    "id": "7",
+    "titulo": "Birds of Prey",
+    "calificacion": 6.1,
+    "imagen": "http://localhost:3000/img/birds-of-prey.jpg"
+  },
+  {
+    "id": "8",
+    "titulo": "Avengers: End Game",
+    "calificacion": 8.4,
+    "imagen": "http://localhost:3000/img/avengers.jpg"
+  },
+  {
+    "id": "9",
+    "titulo": "Joker",
+    "calificacion": 8.4,
+    "imagen": "http://localhost:3000/img/joker.jpg"
+  },
+  {
+    "id": "10",
+    "titulo": "The Godfather",
+    "calificacion": 9.2,
+    "imagen": "http://localhost:3000/img/the-godfather.jpg"
+  },
+  {
+    "id": "11",
+    "titulo": "Mortal Combat",
+    "calificacion": 6.1,
+    "imagen": "http://localhost:3000/img/mortal-combat.jpg"
+  },
+  {
+    "id": "12",
+    "titulo": "The Dark Knight",
+    "calificacion": 9.0,
+    "imagen": "http://localhost:3000/img/the-dark-knight.jpg"
+  },
+  {
+    "id": "13",
+    "titulo": "Interstellar",
+    "calificacion": 8.6,
+    "imagen": "http://localhost:3000/img/interstellar.jpg"
+  },
+  {
+    "id": "14",
+    "titulo": "The Matrix",
+    "calificacion": 8.7,
+    "imagen": "http://localhost:3000/img/the-matrix.jpg"
+  }
+]

@@ -1,0 +1,20 @@
+/* PELICULA */
+#pelicula {
+  color: #fff;
+}
+#pelicula a {
+  color: #97c8eb;
+  text-decoration: none;
+}
+#pelicula a:hover {
+  text-decoration: underline;
+}
+#pelicula .poster {
+  max-width: 100%;
+}
+#pelicula .calificacion .fas {
+  font-size: 20px;
+}
+#pelicula .label {
+  font-weight: bold;
+}

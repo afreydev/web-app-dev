@@ -1,0 +1,13 @@
+{
+  "id": "1",
+  "titulo": "The Avengers",
+  "calificacion": 8.5,
+  "imagen": "http://localhost:3000/img/avengers.jpg",
+  "sinopsis": "Earth's mightiest heroes must come together and learn to fight as a team if they are going to stop the mischievous Loki and his alien army from enslaving humanity.",
+  "director": "Joss Whedon",
+  "actores": [
+    "Robert Downey Jr.",
+    "Chris Evans",
+    "Scarlett Johansson"
+  ]
+}
