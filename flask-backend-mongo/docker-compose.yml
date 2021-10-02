@@ -32,11 +32,11 @@ services:
     node:
         image: node:latest
         volumes:
-            - ./movies:/opt/movies
-        working_dir: /opt/movies
+            - ./frontend:/opt/frontend
+        working_dir: /opt/frontend
     nginx:
         image: nginx:latest
         volumes:
-            - ./movies/build:/usr/share/nginx/html
+            - ./frontend/build:/usr/share/nginx/html
         ports:
             - 8080:80
