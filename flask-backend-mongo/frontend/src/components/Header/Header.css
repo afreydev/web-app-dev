@@ -1,0 +1,25 @@
+/* CABECERA */
+#cabecera {
+  background-color: #021617;
+  padding: 20px 0;
+}
+#boton-menu-principal {
+  color: #fff;
+  font-size: 30px;
+  margin-right: 15px;
+}
+
+#botones-cabecera {
+  float: right;
+  margin-top: 15px;
+}
+#botones-cabecera li .boton-login {
+  color: #fff;
+  font-size: 20px;
+}
+#botones-cabecera li .boton-logout {
+  color: #fff;
+  font-size: 20px;
+  background: none;
+  border: none;
+}

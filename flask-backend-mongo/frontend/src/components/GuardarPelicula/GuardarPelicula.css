@@ -1,0 +1,8 @@
+Form {
+  color: #fff;
+}
+Form button {
+  width: auto !important;
+  border: none !important;
+  padding: 10px 20px !important;
+}

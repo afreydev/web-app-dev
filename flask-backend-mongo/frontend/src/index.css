@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* COMUNES */
+body {
+  margin: 0;
+  background-color: #001011;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  list-style: none;
+}
+
+.logo {
+  color: #64e9ee;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 45px;
+  font-family: "Bangers", cursive;
+  font-weight: 400;
+  letter-spacing: 4px;
+}
+
+.boton-icono {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+h1 {
+  color: #64e9ee;
+  font-family: "Bangers", cursive;
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+h1 .fas {
+  color: #fff;
+}
+
+.contenedor {
+  padding: 0 15px;
+  width: 1366px;
+  margin: auto;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.boton-link {
+  background-color: #06282b;
+  color: #97c8eb;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+.boton-link:hover {
+  background-color: #083135;
+}
