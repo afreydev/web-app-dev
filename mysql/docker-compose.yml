@@ -1,0 +1,14 @@
+version: "3.3"
+services:
+    mysql:
+        image: docker.io/mariadb:10.1
+        ports:
+            - 3306:3306
+        volumes:
+            - ./data/mysql:/var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: password
+            MYSQL_DATABASE: peliculas
+            MYSQL_USER: peliculas
+            MYSQL_PASSWORD: password
+    
