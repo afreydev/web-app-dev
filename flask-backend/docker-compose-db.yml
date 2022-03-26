@@ -11,8 +11,8 @@ services:
             MYSQL_DATABASE: companies
             MYSQL_USER: companies
             MYSQL_PASSWORD: password
-        network:
-            - default:
+        networks:
+            default:
                 ipv4_address: 172.18.0.3
 
 networks:
