@@ -1,0 +1,21 @@
+version: "3.3"
+services:
+    mysql:
+        image: docker.io/mariadb:10.1
+        ports:
+            - 3306:3306
+        volumes:
+            - ./data/mysql:/var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: password
+            MYSQL_DATABASE: companies
+            MYSQL_USER: companies
+            MYSQL_PASSWORD: password
+        network:
+            - default:
+                ipv4_address: 172.18.0.3
+
+networks:
+  default:
+    external:
+      name: vagrant_flask-backend

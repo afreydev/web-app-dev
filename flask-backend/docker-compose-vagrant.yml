@@ -1,0 +1,33 @@
+version: "3.3"
+services:
+    flask:
+        build:
+            context: .
+            dockerfile: ./Dockerfile
+        image: repo/companies-backend:1
+        working_dir: /opt/api/
+        command: bash run.sh
+        ports:
+            - 5000:5000
+        volumes:
+            - ./api/:/opt/api/
+        environment:
+            MYSQL_HOST: mysql
+            MYSQL_DATABASE: companies
+            MYSQL_USER: companies
+            MYSQL_PASSWORD: password
+            APP_ENV: DEV
+        stdin_open: true
+        tty: true
+        expose:
+            - 5000
+        networks:
+          - flask-backend:
+                ipv4_address: 172.18.0.2
+networks:
+    flask-backend:
+        driver: bridge
+        ipam:
+            config:
+            - subnet: 172.18.0.0/16
+              gateway: 172.18.0.1
