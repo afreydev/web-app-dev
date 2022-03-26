@@ -24,6 +24,16 @@ services:
         networks:
           flask-backend:
                 ipv4_address: 172.18.0.2
+    mysql-2:
+        image: docker.io/mariadb:10.1
+        environment:
+            MYSQL_ROOT_PASSWORD: password
+            MYSQL_DATABASE: client
+            MYSQL_USER: client
+            MYSQL_PASSWORD: password
+        networks:
+            flask-backend:
+                ipv4_address: 172.18.0.4
 networks:
     flask-backend:
         driver: bridge
