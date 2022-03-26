@@ -22,7 +22,7 @@ services:
         expose:
             - 5000
         networks:
-          - flask-backend:
+          flask-backend:
                 ipv4_address: 172.18.0.2
 networks:
     flask-backend:
@@ -30,4 +30,3 @@ networks:
         ipam:
             config:
             - subnet: 172.18.0.0/16
-              gateway: 172.18.0.1
