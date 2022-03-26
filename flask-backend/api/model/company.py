@@ -9,6 +9,7 @@ def get_companies():
         sql="SELECT * FROM companies"
         cursor.execute(sql)
         ret = cursor.fetchall()
+        print(ret)
         return ret
     finally:
         con.close()
@@ -25,11 +26,25 @@ def get_company(company_id):
     finally:
         con.close()
 
+def get_company_by_name(company_name):
+    con = db.get_connection() 
+    cursor = con.cursor(pymysql.cursors.DictCursor)
+    ret={}
+    try:
+        sql="SELECT * FROM companies WHERE name = '{}'".format(company_name)
+        print(sql)
+        cursor.execute(sql)
+        ret = cursor.fetchone()
+        return ret
+    finally:
+        con.close()
+
 def create_company(name, description):
     con = db.get_connection()
     cursor = con.cursor()
     try:
         sql="INSERT INTO companies(name, description) VALUES('{}','{}')".format(name, description)
+        print(sql)
         cursor.execute(sql)
         con.commit()
         id_org = cursor.lastrowid
@@ -42,6 +57,7 @@ def update_company(name, description, company_id):
     cursor = con.cursor()
     try:
         sql="UPDATE companies set name='{0}', description='{1}' WHERE id = {2}".format(name, description, company_id)
+        print(sql)
         cursor.execute(sql)
         con.commit()
         return {"message":"OK"}
