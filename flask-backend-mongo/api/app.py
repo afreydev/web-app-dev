@@ -30,7 +30,9 @@ def get_movies():
     try:
         movies = dbmov.movies
         response = app.response_class(
-            response=dumps(movies.find()),
+            response=dumps(
+                movies.find()
+            ),
             status=200,
             mimetype='application/json'
         )
@@ -46,7 +48,7 @@ def create():
     dbmov = con.dbmovies  
     try:
         movies = dbmov.movies
-        movies.insert(data)
+        movies.insert_one(data)
         return jsonify({"message":"OK"})
     finally:
         con.close()
@@ -59,9 +61,9 @@ def update(code):
     dbmov = con.dbmovies
     try:
         movies = dbmov.movies
-        movies.update(
+        movies.replace_one(
             {'_id': ObjectId(code)},
-            data
+            data, True
         )
         return jsonify({"message":"OK"})
     finally:

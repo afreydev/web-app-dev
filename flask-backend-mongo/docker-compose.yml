@@ -27,8 +27,8 @@ services:
             - 27017:27017
         env_file:
             - ./.env
-        volumes:
-            - ./data/mongo:/data/db
+        #volumes:
+        #    - ./data/mongo:/data/db
     node:
         image: node:latest
         volumes:
