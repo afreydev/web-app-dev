@@ -1,0 +1,52 @@
+# =============================================================
+# .buildkite/pipeline.yml
+# Pipeline de ejemplo para el lab local
+# Subir este archivo al repo que conectes en Buildkite
+# =============================================================
+
+steps:
+  # Step 1: Lint - va a la queue default
+  - label: ":mag: Lint"
+    command: "echo 'Running linter...' && sleep 2 && echo 'Lint passed'"
+    agents:
+      queue: default
+
+  # Step 2: Test - va a la queue default
+  - label: ":test_tube: Tests"
+    command: |
+      echo "Running tests..."
+      sleep 3
+      echo "All tests passed"
+    agents:
+      queue: default
+    env:
+      TEST_ENV: "local"
+
+  # Barrier: esperar que lint y test terminen antes de deploy
+  - wait
+
+  # Step 3: Build Docker image
+  - label: ":docker: Build Image"
+    command: |
+      echo "Building Docker image..."
+      echo "docker build -t myapp:${BUILDKITE_BUILD_NUMBER} ."
+      sleep 2
+      echo "Image built: myapp:${BUILDKITE_BUILD_NUMBER}"
+    agents:
+      queue: default
+
+  # Barrier manual: requiere aprobacion humana antes de deploy
+  - block: ":rocket: Deploy to staging?"
+    branches: "main"
+
+  # Step 4: Deploy - va a la queue "deploy" (agente separado)
+  - label: ":rocket: Deploy"
+    command: |
+      echo "Deploying build #${BUILDKITE_BUILD_NUMBER}..."
+      echo "Branch: ${BUILDKITE_BRANCH}"
+      echo "Commit: ${BUILDKITE_COMMIT}"
+      sleep 2
+      echo "Deploy complete"
+    agents:
+      queue: deploy
+    branches: "main"
